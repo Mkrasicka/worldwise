@@ -1,5 +1,5 @@
 import styles from "./Message.module.css";
-
+// eslint-disable-next-line
 function Message({ message }) {
   return (
     <p className={styles.message}>
