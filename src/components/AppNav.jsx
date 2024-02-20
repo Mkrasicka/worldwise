@@ -6,6 +6,7 @@ function AppNav() {
     <nav className={styles.nav}>
       <ul>
         <li>
+          {/* declerative navigation */}
           <NavLink to="cities">Cities</NavLink>
         </li>
         <li>

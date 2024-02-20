@@ -1,4 +1,5 @@
 import styles from "./CityItem.module.css";
+import { Link } from "react-router-dom";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -10,13 +11,20 @@ const formatDate = (date) =>
 // eslint-disable-next-line
 function CityItem({ city }) {
   // eslint-disable-next-line
-  const { cityName, emoji, date } = city;
+  const { cityName, emoji, date, id, position } = city;
+
   return (
-    <div className={styles.cityItem}>
-      <span className={styles.emoji}>{emoji}</span>
-      <h3 className={styles.name}>{cityName}</h3>
-      <time className="styles.date">{formatDate(date)}</time>
-    </div>
+    <li>
+      <Link
+        className={styles.cityItem}
+        // eslint-disable-next-line
+        to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+      >
+        <span className={styles.emoji}>{emoji}</span>
+        <h3 className={styles.name}>{cityName}</h3>
+        <time className="styles.date">{formatDate(date)}</time>
+      </Link>
+    </li>
   );
 }
 
