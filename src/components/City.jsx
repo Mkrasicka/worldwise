@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
 import styles from "./City.module.css";
 import Spinner from "./Spinner";
+import BackButton from "./BackButton";
 // import Button from "./Button";
 
 const formatDate = (date) =>
@@ -61,7 +62,9 @@ function City() {
         </a>
       </div>
 
-      <div></div>
+      <div>
+        <BackButton />
+      </div>
     </div>
   );
 }
