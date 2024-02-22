@@ -16,7 +16,7 @@ function CityItem({ city }) {
   return (
     <li>
       <Link
-        className={styles.cityItem}
+        className={`${styles.cityItem} (id === currentCity.id)? '.cityItem--active' : '`}
         // eslint-disable-next-line
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
